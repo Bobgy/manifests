@@ -221,6 +221,9 @@ spec:
   - kustomizeConfig:
       overlays:
       - application
+      parameters:
+      - name: namespace
+        value: pipeline
       repoRef:
         name: manifests
         path: pipeline/api-service
@@ -230,6 +233,8 @@ spec:
       - minioPd
       - application
       parameters:
+      - name: namespace
+        value: pipeline
       - name: minioPd
         value: test1-storage-artifact-store
       - name: minioPvName
@@ -245,6 +250,8 @@ spec:
       - mysqlPd
       - application
       parameters:
+      - name: namespace
+        value: pipeline
       - name: mysqlPd
         value: test1-storage-metadata-store
       - name: mysqlPvName
@@ -258,6 +265,9 @@ spec:
   - kustomizeConfig:
       overlays:
       - application
+      parameters:
+      - name: namespace
+        value: pipeline
       repoRef:
         name: manifests
         path: pipeline/persistent-agent
@@ -265,6 +275,9 @@ spec:
   - kustomizeConfig:
       overlays:
       - application
+      parameters:
+      - name: namespace
+        value: pipeline
       repoRef:
         name: manifests
         path: pipeline/pipelines-runner
@@ -274,6 +287,9 @@ spec:
       - gcp
       - istio
       - application
+      parameters:
+      - name: namespace
+        value: pipeline
       repoRef:
         name: manifests
         path: pipeline/pipelines-ui
@@ -281,6 +297,9 @@ spec:
   - kustomizeConfig:
       overlays:
       - application
+      parameters:
+      - name: namespace
+        value: pipeline
       repoRef:
         name: manifests
         path: pipeline/pipelines-viewer
@@ -288,6 +307,9 @@ spec:
   - kustomizeConfig:
       overlays:
       - application
+      parameters:
+      - name: namespace
+        value: pipeline
       repoRef:
         name: manifests
         path: pipeline/scheduledworkflow
@@ -295,6 +317,9 @@ spec:
   - kustomizeConfig:
       overlays:
       - application
+      parameters:
+      - name: namespace
+        value: pipeline
       repoRef:
         name: manifests
         path: pipeline/pipeline-visualization-service

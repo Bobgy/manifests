@@ -18,7 +18,8 @@ data:
       "InitConnectionTimeout": "6m",
       "DefaultPipelineRunnerServiceAccount": "pipeline-runner",
       "ML_PIPELINE_VISUALIZATIONSERVER_SERVICE_HOST": "ml-pipeline-ml-pipeline-visualizationserver",
-      "ML_PIPELINE_VISUALIZATIONSERVER_SERVICE_PORT": 8888
+      "ML_PIPELINE_VISUALIZATIONSERVER_SERVICE_PORT": 8888,
+      "DEPLOYMENT": "KUBEFLOW"
     }
 kind: ConfigMap
 metadata:

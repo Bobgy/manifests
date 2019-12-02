@@ -5,11 +5,24 @@ commonLabels:
 resources:
 - config-map.yaml
 - deployment.yaml
-- role-binding.yaml
-- role.yaml
+- clusterrole-binding.yaml
+- clusterrole.yaml
 - service-account.yaml
 - service.yaml
 images:
 - name: gcr.io/ml-pipeline/api-server
   newName: gcr.io/ml-pipeline-dogfood/ngao-api-server
   digest: sha256:1699dd9edea79f4f672ab560d6a4b04fcee4e73b1fd9502930c932addf496c36
+configMapGenerator:
+- name: pipeline-api-server-parameters
+  env: params.env
+configurations:
+- params.yaml
+vars:
+- name: namespace
+  objref:
+    kind: ConfigMap
+    name: pipeline-api-server-parameters
+    apiVersion: v1
+  fieldref:
+    fieldpath: data.namespace

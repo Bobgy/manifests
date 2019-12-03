@@ -2,14 +2,25 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 commonLabels:
   app: ml-pipeline
+namespace: pipeline
 resources:
 - config-map.yaml
 - deployment.yaml
-- role-binding.yaml
-- role.yaml
+- clusterrole-binding.yaml
+- clusterrole.yaml
 - service-account.yaml
 - service.yaml
 images:
 - name: gcr.io/ml-pipeline/api-server
   newName: gcr.io/ml-pipeline-dogfood/ngao-api-server
   digest: sha256:1699dd9edea79f4f672ab560d6a4b04fcee4e73b1fd9502930c932addf496c36
+configurations:
+- params.yaml
+vars:
+- name: namespace
+  objref:
+    kind: ServiceAccount
+    name: ml-pipeline
+    apiVersion: v1
+  fieldref:
+    fieldpath: metadata.namespace

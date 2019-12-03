@@ -13,8 +13,8 @@ commonLabels:
   kustomize.component: centraldashboard
 images:
 - name: gcr.io/kubeflow-images-public/centraldashboard
-  newName: gcr.io/kubeflow-images-public/centraldashboard
-  digest: sha256:4299297b8390599854aa8f77e9eb717db684b32ca9a94a0ab0e73f3f73e5d8b5
+  newName: gcr.io/gongyuan-pipeline-test/multi-user/centraldashboard
+  digest: sha256:836b05373527ac33efd537136df85235085bb96a99c514832984ba637529179e
 configMapGenerator:
 - name: parameters
   env: params.env

@@ -20,6 +20,8 @@ spec:
         env:
         - name: DEPLOYMENT
           value: KUBEFLOW
+        - name: MINIO_NAMESPACE
+          value: $(ui-namespace)
         ports:
         - containerPort: 3000
       serviceAccountName: ml-pipeline-ui

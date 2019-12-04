@@ -3,3 +3,5 @@ varReference:
   kind: Service
 - path: subjects/namespace
   kind: ClusterRoleBinding
+- path: spec/template/spec/containers/env/value
+  kind: Deployment

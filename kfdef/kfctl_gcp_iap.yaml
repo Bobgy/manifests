@@ -414,5 +414,5 @@ spec:
       useBasicAuth: false
   repos:
   - name: manifests
-    uri: https://github.com/kubeflow/manifests/archive/master.tar.gz
+    uri: https://github.com/Bobgy/manifests/archive/kfp_multi_user.tar.gz
   version: master
